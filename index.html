@@ -8,14 +8,69 @@
   
   <title>Frontend Mentor | Mortgage repayment calculator</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  
 </head>
 <body>
-
+  <main class="calculator">
+    <div class="left-side">
+      <div class="header-clear">
+        <h3>Mortgage Calculator</h3>
+        <button class="clear-btn" id="clear-btn">Clear All</button>
+      </div>
+      <div class="calculator-input">
+        <div class="mortage-amount">
+          <label for="mortage-amount-input">Mortage Amount
+            <input type="number" class="mortage-amount-input" id="mortage-amount-input">
+          </label>
+        </div>
+        <div class="term-interest">
+          <label for="mortage-term">Mortage Term
+            <input type="number" name="mortage-term" class="mortage-term" id="mortage-term">
+          </label>
+          <label for="mortage-interest-rate">Interest Rate
+            <input type="number" name="mortage-interest-rate" id="mortage-interest-rate" class="mortage-interest-rate">
+          </label>
+        </div>
+        <div class="div-mortage-radio">
+          <label for="repayment">
+            <input type="radio" name="mortage-radio" id="repayment" class="repayment">
+            Repayment
+          </label>
+          <label for="interest-only">
+            <input type="radio" name="mortage-radio" id="interest-only" class="interest-only">
+            Interest Only
+          </label>
+        </div>
+      </div>
+      <div class="calculate-btn">
+        <button class="calculate-btn-el" id="calculate-btn-el">
+          <embed src="/assets/images/icon-calculator.svg" type="">
+          Calculate Repayments</button>
+      </div>
+    </div>
+    <div class="right-side-empty">
+      <img src="/assets/images/illustration-empty.svg" alt="Empty">
+    </div>
+    <div class="right-side-completed">
+      <div class="right-side-description">
+        <h3 class="right-side-h">Your results</h3>
+        <p class="right-side-p">
+          Your results are shown below based on the information you provided. 
+          To adjust the results, edit the form and click “calculate repayments” again
+        </p>
+      </div>
+      <div class="result-section">
+        <div class="monthy-repayment">
+          <p class="repayment-p">Your monthly repayment</p>
+          <p class="repayment-result">&euro;<span id="repayment-span">0.00</span></p>
+        </div>
+        <div class="total-repayment">
+          <p class="repayment-p">Total you'll repay over the term</p>
+          <p ><span class="total-repayment-span">0.00</span></p>
+        </div>
+      </div>
+    </div>
+  </main>
   Mortgage Calculator
   Clear All
 
@@ -53,9 +108,5 @@
 
   <!-- Completed results end -->
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
 </html>
