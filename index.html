@@ -22,14 +22,21 @@
           <label for="mortage-amount-input">Mortage Amount
             <input type="number" class="mortage-amount-input" id="mortage-amount-input" placeholder="&euro;">
           </label>
+          <p id="error-amount" class="error">This field is required</p>
         </div>
         <div class="term-interest">
-          <label for="mortage-term">Mortage Term
-            <input type="number" name="mortage-term" class="mortage-term" id="mortage-term" placeholder="years">
-          </label>
-          <label for="mortage-interest-rate">Interest Rate
-            <input type="number" name="mortage-interest-rate" id="mortage-interest-rate" class="mortage-interest-rate" placeholder="%">
-          </label>
+          <div class="term-input">
+            <label for="mortage-term">Mortage Term
+              <input type="number" name="mortage-term" class="mortage-term" id="mortage-term" placeholder="years">
+            </label>
+            <p id="error-term" class="error">This field is required</p>
+          </div>
+          <div class="interest-input">
+            <label for="mortage-interest-rate">Interest Rate
+              <input type="number" name="mortage-interest-rate" id="mortage-interest-rate" class="mortage-interest-rate" placeholder="%">
+            </label>
+            <p id="error-interest" class="error">This field is required</p>
+          </div>
         </div>
         <div class="mortage-radio-div">
           <p>Mortage Type</p>
@@ -51,12 +58,15 @@
           <span class="button-des">Calculate Repayment</span></button>
       </div>
     </div>
-    <div class="right-side-empty">
-      <img src="/assets/images/illustration-empty.svg" alt="Empty">
-      <h3>Results shown here</h3>
-      <p>Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
-    </div>
-    <div class="right-side-completed">
+    
+      <div class="right-side-empty" id="empty">
+        
+        <img src="/assets/images/illustration-empty.svg" alt="Empty">
+        <h3>Results shown here</h3>
+        <p>Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
+      </div>
+    
+    <div class="right-side-completed" id="complete">
       <div class="right-side-description">
         <h3 class="right-side-h">Your results</h3>
         <p class="right-side-p">
