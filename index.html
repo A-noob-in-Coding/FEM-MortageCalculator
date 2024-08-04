@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+<link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Mortgage repayment calculator</title>
@@ -15,41 +15,46 @@
     <div class="left-side">
       <div class="header-clear">
         <h3>Mortgage Calculator</h3>
-        <button class="clear-btn" id="clear-btn">Clear All</button>
+        <button class="clear-btn" id="clear-button">Clear All</button>
       </div>
       <div class="calculator-input">
         <div class="mortage-amount">
           <label for="mortage-amount-input">Mortage Amount
-            <input type="number" class="mortage-amount-input" id="mortage-amount-input">
+            <input type="number" class="mortage-amount-input" id="mortage-amount-input" placeholder="&euro;">
           </label>
         </div>
         <div class="term-interest">
           <label for="mortage-term">Mortage Term
-            <input type="number" name="mortage-term" class="mortage-term" id="mortage-term">
+            <input type="number" name="mortage-term" class="mortage-term" id="mortage-term" placeholder="years">
           </label>
           <label for="mortage-interest-rate">Interest Rate
-            <input type="number" name="mortage-interest-rate" id="mortage-interest-rate" class="mortage-interest-rate">
+            <input type="number" name="mortage-interest-rate" id="mortage-interest-rate" class="mortage-interest-rate" placeholder="%">
           </label>
         </div>
-        <div class="div-mortage-radio">
+        <div class="mortage-radio-div">
+          <p>Mortage Type</p>
           <label for="repayment">
-            <input type="radio" name="mortage-radio" id="repayment" class="repayment">
-            Repayment
+            <input type="radio" name="mortage-radio" id="repayment" class="radio-mortage" checked>
+            <p>Repayment</p>
           </label>
           <label for="interest-only">
-            <input type="radio" name="mortage-radio" id="interest-only" class="interest-only">
-            Interest Only
+            <input type="radio" name="mortage-radio" id="interest-only" class="radio-mortage">
+            <p>
+              Interest Only
+            </p>
           </label>
         </div>
       </div>
       <div class="calculate-btn">
         <button class="calculate-btn-el" id="calculate-btn-el">
           <embed src="/assets/images/icon-calculator.svg" type="">
-          Calculate Repayments</button>
+          <span class="button-des">Calculate Repayment</span></button>
       </div>
     </div>
     <div class="right-side-empty">
       <img src="/assets/images/illustration-empty.svg" alt="Empty">
+      <h3>Results shown here</h3>
+      <p>Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
     </div>
     <div class="right-side-completed">
       <div class="right-side-description">
@@ -66,47 +71,11 @@
         </div>
         <div class="total-repayment">
           <p class="repayment-p">Total you'll repay over the term</p>
-          <p ><span class="total-repayment-span">0.00</span></p>
+          <p class="total-repayment-result">&euro;<span id="total-repayment-span">0.00</span></p>
         </div>
       </div>
     </div>
   </main>
-  Mortgage Calculator
-  Clear All
-
-  Mortgage Amount
-
-  Mortgage Term
-
-  Interest Rate
-
-  Mortgage Type
-  Repayment
-  Interest Only
-
-  Calculate Repayments
-
-  <!-- Empty results start -->
-
-  Results shown here
-
-  Complete the form and click “calculate repayments” to see what 
-  your monthly repayments would be.
-
-  <!-- Empty results end -->
-
-  <!-- Completed results start -->
-
-  Your results
-
-  Your results are shown below based on the information you provided. 
-  To adjust the results, edit the form and click “calculate repayments” again.
-
-  Your monthly repayments
-
-  Total you'll repay over the term
-
-  <!-- Completed results end -->
-  
+  <script src="script.js"></script>
 </body>
 </html>
