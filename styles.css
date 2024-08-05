@@ -277,3 +277,70 @@ input[type="number"]{
     font-size: 0.8rem;
     display: none;
 }   
+
+/* Styles for phones */
+@media screen and (max-width: 767px) {
+    main{
+        width: 100%;
+        height: 100%;
+        padding: none;
+        flex-direction: column;
+    }
+    main .left-side,
+    main .right-side-completed,
+    main .right-side-empty{
+        width: 100%;
+    }
+
+    main .right-side-completed,
+    main .right-side-empty{
+        border-radius: 0;
+        padding: 1rem;
+    }
+
+    main .left-side .calculate-btn,
+    main .left-side .calculate-btn .calculate-btn-el{
+        width: 100%;
+    }
+
+}
+
+/* Styles for tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    p,
+    label,
+    button{
+        font-size: 1.4rem;
+    }
+
+    body{
+        min-height: 100vh;
+    }
+
+    main{
+        width: 90%;
+        min-height: 70%;
+        }
+
+    
+    main .left-side .calculate-btn,
+    main .left-side .calculate-btn .calculate-btn-el{
+        width: 100%;
+        font-size: 1.4rem;
+    }
+
+    main .right-side-empty,
+    main .right-side-completed{
+        height: 100%;
+        margin: none;
+    }
+    main .left-side .calculator-input label {
+        margin-top: 2rem;
+    }
+    
+    main .left-side .calculator-input .mortage-radio-div label {
+        margin-top: initial;
+        
+    }
+}
+

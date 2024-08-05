@@ -27,9 +27,9 @@ function clear(){
     monthy_repayment.innerText = "0.00"
     total_repayment.innerText = "0.00"
     console.log("fd")
-    mortageAmountEl.value = 0
-    mortageTermEl.value = 0
-    mortageInterestEl.value = 0
+    mortageAmountEl.value = ""
+    mortageTermEl.value = ""
+    mortageInterestEl.value = ""
     mortageAmount = 0
     mortageTerm = 0
     mortageInterest = 0
@@ -47,30 +47,42 @@ clear_btn.addEventListener("click", ()=>{
 })
 
 mortageAmountEl.addEventListener("input",()=>{
+    
     mortageAmount =  parseFloat( mortageAmountEl.value)
 })
 
 mortageTermEl.addEventListener("input",()=>{
     mortageTerm = parseFloat(mortageTermEl.value)
+    
 })
 
 mortageInterestEl.addEventListener("input",()=>{
+    
     mortageInterest = parseFloat(mortageInterestEl.value)
 })
-function calculateMortrage(amount, interest = 0, term) {
-    let totalRepayment = 0;
-    let monthlyRepayment = 0;
+
+function calculateMortrage(amount, interest, term) {
+    const monthlyInterestRate = (interest / 100) / 12;
+  
+    let monthlyRepayment =0
+    let totalRepayment = 0
     if (!interestRadio.checked) {
-        monthlyRepayment = amount/(term*12)
-        totalRepayment = monthlyRepayment * (term*12)
+      // Repayment mortgage
+      const numerator = amount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, term * 12);
+      const denominator = Math.pow(1 + monthlyInterestRate, term * 12) - 1;
+      monthlyRepayment = numerator / denominator;
+      totalRepayment = monthlyRepayment * term * 12;
+      console.log("repayment")
     } else {
-        monthlyInterest = (interest/100)/12
-        monthlyRepayment = amount*(monthlyInterest* Math.pow(monthlyInterest+1,term*12))/(Math.pow(1+monthlyInterest,term*12)-1)
-        totalRepayment = monthlyRepayment * term * 12
+        // Interest-only mortgage
+      monthlyRepayment = amount * monthlyInterestRate;
+      totalRepayment = monthlyRepayment * term * 12;
+      
     }
-    totalResult = totalRepayment.toFixed(2);
-    monthlyResult = monthlyRepayment.toFixed(2);
-}
+    totalResult = totalRepayment.toFixed(2)
+    monthlyResult = monthlyRepayment.toFixed(2)
+  }
+  
 
 calculateButton.addEventListener("click",()=>{ 
     if(emptyHandler() == false){   
